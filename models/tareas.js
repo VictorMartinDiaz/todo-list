@@ -38,11 +38,14 @@ class Tareas {
     }
 
     listadoCompleto () {
-        const idx = `${i+1}`.cyan;
-        const {desc, completadoEn} = tarea;
-        const estado = (completadoEn) ? 'Completada'.green : 'Pendiente'.red;
 
+        console.log();
         this.listadoArr.forEach((tarea, i) => {
+
+            const idx = `${i+1}.`.cyan;
+            const {desc, completadoEn} = tarea;
+            const estado = (completadoEn) ? 'Completada'.green : 'Pendiente'.red;
+
             this._listado[tarea.id] = tarea;
             console.log(`${idx} ${desc} :: ${estado}`);
         });
