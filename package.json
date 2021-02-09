@@ -1,6 +1,6 @@
 {
   "name": "04-todo-list",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "CRUD de una lista de tareas estandar",
   "main": "app.js",
   "scripts": {
