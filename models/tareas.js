@@ -1,4 +1,5 @@
 const Tarea = require("./tarea");
+const Colors = require('colors');
 
 class Tareas {
 
@@ -8,6 +9,12 @@ class Tareas {
 
         this._listado = {};
 
+    }
+
+    destructor (id) {
+        if (this._listado[id]) {
+            delete this._listado[id];
+        }
     }
 
     get listadoArr() {
@@ -50,6 +57,31 @@ class Tareas {
             console.log(`${idx} ${desc} :: ${estado}`);
         });
 
+    }
+
+    listarTareasCompletadas(){
+        console.log();
+        let i = 0;
+        this.listadoArr.forEach((tarea) => {
+
+            if(tarea.completadoEn!=null){
+                i++;
+                console.log( `${Colors.cyan(i)}. ${tarea.desc} :: ${Colors.green(tarea.completadoEn)}` );
+        }
+            
+
+        });
+    }
+
+    listarTareasPendientes(){
+        console.log();
+        let i = 0;
+        this.listadoArr.forEach((tarea) => {
+            if(tarea.completadoEn==null){
+                i++;
+                console.log( `${Colors.cyan(i)}. ${tarea.desc} :: ${Colors.red('Pendiente')}` );
+            }
+        });
     }
 
 }
