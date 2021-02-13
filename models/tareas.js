@@ -1,5 +1,5 @@
 const Tarea = require("./tarea");
-const Colors = require('colors');
+const colors = require('colors');
 
 class Tareas {
 
@@ -50,7 +50,7 @@ class Tareas {
 
             const idx = `${i+1}.`.cyan;
             const {desc, completadoEn} = tarea;
-            const estado = (completadoEn) ? 'Completada'.green : 'Pendiente'.red;
+            const estado = (completadoEn) ? 'Comprado'.green : 'Pendiente'.red;
 
             this._listado[tarea.id] = tarea;
             console.log(`${idx} ${desc} :: ${estado}`);
@@ -65,7 +65,7 @@ class Tareas {
 
             if(tarea.completadoEn!=null){
                 i++;
-                console.log( `${Colors.cyan(i)}. ${tarea.desc} :: ${Colors.green(tarea.completadoEn)}` );
+                console.log( `${colors.cyan(i)}. ${tarea.desc} :: ${colors.green(tarea.completadoEn)}` );
         }
             
 
@@ -78,7 +78,7 @@ class Tareas {
         this.listadoArr.forEach((tarea) => {
             if(tarea.completadoEn==null){
                 i++;
-                console.log( `${Colors.cyan(i)}. ${tarea.desc} :: ${Colors.red('Pendiente')}` );
+                console.log( `${colors.cyan(i)}. ${tarea.desc} :: ${colors.red('Pendiente')}` );
             }
         });
     }

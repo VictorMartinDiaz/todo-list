@@ -8,27 +8,27 @@ const preguntas = [{
     choices: [
         {
             value: '1',
-            name: `${'1'.yellow} Crear tarea`
+            name: `${'1'.yellow} Agregar Producto a la lista de la compra`
         }, 
         {
             value: '2',
-            name: `${'2'.yellow} Listar tareas`
+            name: `${'2'.yellow} Ver mi lista de la compra`
         }, 
         {
             value: '3',
-            name: `${'3'.yellow} Listar tareas completadas`
+            name: `${'3'.yellow} Ver los productos que ya tengo`
         },
         {
             value: '4',
-            name: `${'4'.yellow} Listar tareas pendientes`
+            name: `${'4'.yellow} Ver productos que faltan por comprar`
         },
         {
             value: '5',
-            name: `${'5'.yellow} Completar tareas`
+            name: `${'5'.yellow} Marcar producto como comprado o como pendiente de comprar`
         },
         {
             value: '6',
-            name: `${'6'.yellow} Borrar tareas`
+            name: `${'6'.yellow} Borrar producto de la lista de la compra`
         },
         {
             value: '0',
@@ -68,10 +68,10 @@ const leerInput = async () => {
         {
             type: 'input',
             name: 'desc',
-            message: 'Descripcion:',
+            message: 'Producto:',
             validate(value) {
                 if(value.length === 0) {
-                    return 'Por favor, ingrese un valor.';
+                    return 'Por favor, ingrese un producto.';
                 }
                 return true;
             }

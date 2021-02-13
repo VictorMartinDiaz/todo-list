@@ -29,7 +29,7 @@ const main = async () => {
 
         switch (opt) {
             case '1':
-                const desc = await leerInput('Descripcion: ');
+                const desc = await leerInput('Producto: ');
                 tareas.crearTarea(desc);
             break;
 
@@ -57,7 +57,7 @@ const main = async () => {
                     const ok = await confirmar('¿Está seguro de que desea borrar? ')
                     if(ok) {
                         tareas.destructor(id);
-                        console.log('Tarea borrada.');
+                        console.log('Producto eliminado de la lista.');
                     }
                 }
             break;
